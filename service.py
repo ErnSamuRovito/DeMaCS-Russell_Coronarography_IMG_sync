@@ -14,7 +14,7 @@ ROOT_DIR = "Root_dir"
 
 class Service:
     def __init__(self, base_folder=None):
-        self.logger = Log("API_log.txt")
+        self.logger = Log("API_History.log")
         self.base_folder = Path(base_folder) if base_folder else Path(__file__).resolve().parent.parent
 
     def get_result(self, patient: str) -> Result:

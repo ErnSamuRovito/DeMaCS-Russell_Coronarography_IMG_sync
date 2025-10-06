@@ -10,7 +10,7 @@ EXCEL_FILE = "tesi.xlsx"
 ROOT_DIR = "Root_dir"
 
 def main():
-    logger = Log("log.txt")
+    logger = Log("history.log")
 
     base_folder = Path(__file__).resolve().parent.parent
     excel_path = base_folder / EXCEL_FILE

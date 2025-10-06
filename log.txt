@@ -1,0 +1,143 @@
+[2025-09-30 13:44:04] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-09-30 13:44:04] [INFO] Pixels dtype: int32
+[2025-09-30 13:44:04] [INFO] Image size: (512, 512, 236)
+[2025-09-30 13:44:04] [INFO] Max: 255
+[2025-09-30 13:44:04] [INFO] Min: 0
+[2025-09-30 13:44:04] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-09-30 13:44:04] [CRITICAL] Error processing image: Plot.plot_histogram() missing 1 required positional argument: 'values'
+[2025-09-30 13:46:48] [WARNING] No .nrrd file found for 'Paz_002_01' in Excel file
+[2025-09-30 13:47:07] [CRITICAL] Error processing image: Plot.__init__() takes 1 positional argument but 2 were given
+[2025-09-30 13:48:12] [CRITICAL] Error processing image: Plot() takes no arguments
+[2025-09-30 13:48:45] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-09-30 13:48:45] [INFO] Pixels dtype: int32
+[2025-09-30 13:48:45] [INFO] Image size: (512, 512, 236)
+[2025-09-30 13:48:45] [INFO] Max: 255
+[2025-09-30 13:48:45] [INFO] Min: 0
+[2025-09-30 13:48:45] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-09-30 13:48:45] [CRITICAL] Error processing image: Plot.plot_histogram() missing 1 required positional argument: 'values'
+[2025-10-01 11:07:23] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-01 11:07:23] [INFO] Pixels dtype: int32
+[2025-10-01 11:07:23] [INFO] Image size: (512, 512, 236)
+[2025-10-01 11:07:23] [INFO] Max: 255
+[2025-10-01 11:07:23] [INFO] Min: 0
+[2025-10-01 11:07:24] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-01 11:07:24] [CRITICAL] Error processing image: Plot.plot_histogram() missing 1 required positional argument: 'values'
+[2025-10-01 11:14:42] [INFO] len sequence: 236
+[2025-10-01 11:14:53] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-01 11:14:53] [INFO] Pixels dtype: int32
+[2025-10-01 11:14:53] [INFO] Image size: (512, 512, 236)
+[2025-10-01 11:14:53] [INFO] Max: 255
+[2025-10-01 11:14:53] [INFO] Min: 0
+[2025-10-01 11:14:53] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-01 11:14:53] [CRITICAL] Error processing image: Plot.plot_histogram() missing 1 required positional argument: 'values'
+[2025-10-01 11:41:02] [CRITICAL] Error processing image: Analysis.__init__() missing 1 required positional argument: 'img_np'
+[2025-10-01 11:41:49] [CRITICAL] Error processing image: 'Analysis' object has no attribute 'extract_images'
+[2025-10-01 12:00:15] [INFO] len sequence: 236
+[2025-10-01 12:00:15] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-01 12:00:15] [INFO] Pixels dtype: int32
+[2025-10-01 12:00:15] [INFO] Image size: (512, 512, 236)
+[2025-10-01 12:00:15] [INFO] Max: 255
+[2025-10-01 12:00:15] [INFO] Min: 0
+[2025-10-01 12:00:15] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-01 12:00:15] [CRITICAL] Error processing image: Plot.plot_histogram() missing 1 required positional argument: 'values'
+[2025-10-01 12:01:21] [INFO] len sequence: 236
+[2025-10-01 12:01:21] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-01 12:01:21] [INFO] Pixels dtype: int32
+[2025-10-01 12:01:21] [INFO] Image size: (512, 512, 236)
+[2025-10-01 12:01:21] [INFO] Max: 255
+[2025-10-01 12:01:21] [INFO] Min: 0
+[2025-10-01 12:01:21] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-01 12:01:21] [CRITICAL] Error processing image: Plot.plot_histogram() missing 1 required positional argument: 'values'
+[2025-10-02 10:26:06] [CRITICAL] Error processing image: Plot.__init__() takes 1 positional argument but 2 were given
+[2025-10-02 10:28:55] [INFO] len sequence: 236
+[2025-10-02 10:28:55] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 10:28:55] [INFO] Pixels dtype: int32
+[2025-10-02 10:28:55] [INFO] Image size: (512, 512, 236)
+[2025-10-02 10:28:55] [INFO] Max: 255
+[2025-10-02 10:28:55] [INFO] Min: 0
+[2025-10-02 10:28:55] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 10:28:55] [CRITICAL] Error processing image: 'GrayScaleImage' object has no attribute 'plot_manager'
+[2025-10-02 10:40:24] [CRITICAL] Error processing image: 'function' object has no attribute 'values'
+[2025-10-02 10:41:53] [CRITICAL] Error processing image: 'function' object has no attribute 'values'
+[2025-10-02 10:42:47] [CRITICAL] Error processing image: object of type 'method' has no len()
+[2025-10-02 10:43:21] [CRITICAL] Error processing image: object of type 'method' has no len()
+[2025-10-02 10:44:28] [CRITICAL] Error processing image: unhashable type: 'numpy.ndarray'
+[2025-10-02 10:50:15] [CRITICAL] Error processing image: unhashable type: 'numpy.ndarray'
+[2025-10-02 10:55:42] [INFO] len sequence: 236
+[2025-10-02 10:55:42] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 10:55:42] [INFO] Pixels dtype: int32
+[2025-10-02 10:55:42] [INFO] Image size: (512, 512, 236)
+[2025-10-02 10:55:42] [INFO] Max: 255
+[2025-10-02 10:55:43] [INFO] Min: 0
+[2025-10-02 10:55:43] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 11:00:07] [INFO] len sequence: 236
+[2025-10-02 11:00:07] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 11:00:07] [INFO] Pixels dtype: int32
+[2025-10-02 11:00:07] [INFO] Image size: (512, 512, 236)
+[2025-10-02 11:00:07] [INFO] Max: 255
+[2025-10-02 11:00:07] [INFO] Min: 0
+[2025-10-02 11:00:07] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 11:01:57] [INFO] len sequence: 236
+[2025-10-02 11:01:57] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 11:01:57] [INFO] Pixels dtype: int32
+[2025-10-02 11:01:57] [INFO] Image size: (512, 512, 236)
+[2025-10-02 11:01:57] [INFO] Max: 255
+[2025-10-02 11:01:57] [INFO] Min: 0
+[2025-10-02 11:01:57] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 11:05:20] [INFO] len sequence: 236
+[2025-10-02 11:05:20] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 11:05:20] [INFO] Pixels dtype: int32
+[2025-10-02 11:05:20] [INFO] Image size: (512, 512, 236)
+[2025-10-02 11:05:20] [INFO] Max: 255
+[2025-10-02 11:05:20] [INFO] Min: 0
+[2025-10-02 11:05:20] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 11:06:49] [INFO] len sequence: 236
+[2025-10-02 11:06:49] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 11:06:49] [INFO] Pixels dtype: int32
+[2025-10-02 11:06:49] [INFO] Image size: (512, 512, 236)
+[2025-10-02 11:06:49] [INFO] Max: 255
+[2025-10-02 11:06:49] [INFO] Min: 0
+[2025-10-02 11:06:49] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 11:08:03] [INFO] len sequence: 236
+[2025-10-02 11:08:03] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 11:08:03] [INFO] Pixels dtype: int32
+[2025-10-02 11:08:03] [INFO] Image size: (512, 512, 236)
+[2025-10-02 11:08:03] [INFO] Max: 255
+[2025-10-02 11:08:03] [INFO] Min: 0
+[2025-10-02 11:08:03] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 11:09:53] [INFO] len sequence: 236
+[2025-10-02 11:09:53] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 11:09:53] [INFO] Pixels dtype: int32
+[2025-10-02 11:09:53] [INFO] Image size: (512, 512, 236)
+[2025-10-02 11:09:53] [INFO] Max: 255
+[2025-10-02 11:09:53] [INFO] Min: 0
+[2025-10-02 11:09:53] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 11:10:33] [WARNING] No .nrrd file found for 'self.logger("info", f"Image PixelType: {sitk.GetPixelIDValueAsString(self.pixel_id)}")' in Excel file
+[2025-10-02 11:10:48] [INFO] len sequence: 236
+[2025-10-02 11:10:48] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 11:10:48] [INFO] Pixels dtype: int32
+[2025-10-02 11:10:48] [INFO] Image size: (512, 512, 236)
+[2025-10-02 11:10:48] [INFO] Max: 255
+[2025-10-02 11:10:48] [INFO] Min: 0
+[2025-10-02 11:10:48] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 11:12:53] [INFO] len sequence: 236
+[2025-10-02 11:12:53] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 11:12:53] [INFO] Pixels dtype: 4
+[2025-10-02 11:12:53] [INFO] Image size: (512, 512, 236)
+[2025-10-02 11:12:54] [INFO] Max: 255
+[2025-10-02 11:12:54] [INFO] Min: 0
+[2025-10-02 11:12:54] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 12:05:36] [INFO] len sequence: 236
+[2025-10-02 12:05:36] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 12:05:36] [INFO] Pixels dtype: 4
+[2025-10-02 12:05:36] [INFO] Image size: (512, 512, 236)
+[2025-10-02 12:05:36] [INFO] Max: 255
+[2025-10-02 12:05:36] [INFO] Min: 0
+[2025-10-02 12:05:36] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']
+[2025-10-02 20:13:10] [INFO] len sequence: 236
+[2025-10-02 20:13:10] [INFO] Loaded image for patient Paz_001_01: C:\Users\samue\Desktop\Tesi\Root_dir\Paz_001_01\coro.nrrd
+[2025-10-02 20:13:10] [INFO] Pixels dtype: 4
+[2025-10-02 20:13:10] [INFO] Image size: (512, 512, 236)
+[2025-10-02 20:13:10] [INFO] Max: 255
+[2025-10-02 20:13:10] [INFO] Min: 0
+[2025-10-02 20:13:10] [INFO] Meta keys: ['ITK_InputFilterName', 'ITK_original_direction', 'ITK_original_spacing', 'NRRD_kinds[0]', 'NRRD_kinds[1]']

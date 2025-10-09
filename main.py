@@ -40,10 +40,14 @@ def main():
         analysis = Analysis(img.get_image())
         analysis.compare_sequence()
 
-        Plot.plot_line(analysis.get_distances(), "Sequence Comparison Distances")
-        Plot.plot_histogram(img.get_pixels_prensence(), "Sequence Comparison Pixels Presence")
-        
-        logger.log("info", f"len sequence: {len(img.get_image())}")
+        plotter = Plot()
+        plotter.plot_line(analysis.get_distances(), patient, "Sequence Comparison Distances")
+        plotter.plot_histogram(img.get_pixels_prensence(), patient, "Sequence Comparison Pixels Presence")
+
+        logger.log("info", f"repetition fft = {analysis.get_frequency()}") 
+        logger.log("info", f"split = {img.split_slice(analysis.get_frequency())}")
+
+        logger.log("info", f"Len sequence: {len(img.get_image())}")
         logger.log("info", f"Loaded image for patient {patient}: {nrrd_path}")
         img.print_info()
 

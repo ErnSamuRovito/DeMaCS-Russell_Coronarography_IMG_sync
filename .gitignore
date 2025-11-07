@@ -1,3 +1,7 @@
 *.log
+*.nrrd
+*.jpg
 
 /__pycache__
+/Root_dir
+/Root_dir_processed

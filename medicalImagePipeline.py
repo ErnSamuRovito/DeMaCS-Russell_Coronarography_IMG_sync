@@ -1,4 +1,5 @@
 import sys
+
 from pathlib import Path
 from plot import Plot
 from processer import Processer
@@ -6,7 +7,6 @@ from log import Log
 from grayScaleImage import GrayScaleImage
 from analysis import Analysis
 from extractor import Extractor
-
 from typing import Optional
 
 EXCEL_FILE = "Tesi.xlsx"
@@ -71,7 +71,7 @@ class MedicalImagePipeline:
             heartrate_splitted = img.split_slice(subdivision)
 
             self._plot_histogram(img, patient)
-            validated_index = self._validate_peaks(analysis, patient, frequency)
+            # validated_index = self._validate_peaks(analysis, patient, frequency)
 
             self.plotter.plot_fft(
                 analysis.get_frequency_plot(),
@@ -80,11 +80,11 @@ class MedicalImagePipeline:
                 "FFT"
             )
 
-            if validated_index is not None:
-                self._plot_sinusoid(analysis, patient)
-                self._save_results(img, patient, frequency, heartrate_splitted)
-            else:
-                self.logger.log("warning", "No valid plot was confirmed. Exiting.")
+            # if validated_index is not None:
+            self._plot_sinusoid(analysis, patient)
+            self._save_results(img, patient, frequency, heartrate_splitted)
+            #else:
+            #    self.logger.log("warning", "No valid plot was confirmed. Exiting.")
 
         except KeyboardInterrupt:
             self.logger.log("info", "Process interrupted by user.")

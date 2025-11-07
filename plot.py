@@ -36,7 +36,7 @@ class Plot:
 
         plt.tight_layout()
         plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        plt.show()
+        # plt.show()
         plt.close()
 
     def plot_histogram(self, values: np.ndarray, patient_id: str, title: str = 'plot_histogram'):
@@ -52,7 +52,7 @@ class Plot:
         plt.tight_layout()
         plt.savefig(f"{self.processer.get_processed_folder(patient_id)}/{title}.jpg", dpi=300)
 
-        plt.show()
+        # plt.show()
         plt.close()
 
     def plot_sinusoid(self, analysis: Analysis, patient_id: str) -> None:
@@ -102,7 +102,7 @@ class Plot:
 
         output_path = self.processer.get_folder_to_save_file(patient_id, "Sinusoid")
         plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        plt.show()
+        # plt.show()
         plt.close()
 
     def plot_fft(self, f, P_norme, patient_id: str, title: str):
@@ -128,7 +128,7 @@ class Plot:
         # Salva immagine con Processer
         output_path = self.processer.get_folder_to_save_file(patient_id, title, "jpg")
         plt.savefig(output_path, bbox_inches="tight")
-        plt.show()
+        # plt.show()
         plt.close()
 
         return output_path

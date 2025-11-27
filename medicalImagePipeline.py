@@ -24,7 +24,6 @@ def _perform_analysis(img: GrayScaleImage) -> Analysis:
     analysis.compare_sequence()
     return analysis
 
-
 def _get_validation_input(current: int, total: int) -> str:
     while True:
         response = input(
@@ -37,17 +36,6 @@ def _get_validation_input(current: int, total: int) -> str:
         print(f"Invalid input. Please enter '{USER_CONFIRM_YES}' or '{USER_CONFIRM_NO}'.")
 
 
-def _get_patient_name() -> str:
-    if len(sys.argv) != 0:
-        return sys.argv[1]
-    else:
-        while True:
-            patient = input("Enter patient name (e.g., Paz_001_01): ").strip()
-            if patient:
-                return patient
-            print("Patient name cannot be empty. Please try again.")
-
-
 class MedicalImagePipeline:
     def __init__(self, base_folder: Path):
         self.base_folder = base_folder
@@ -55,34 +43,45 @@ class MedicalImagePipeline:
         self.processer = Processer()
         self.plotter = Plot()
         self.excel_path = base_folder / EXCEL_FILE
+        self.patient = None
+        self.nrrd_path = None
 
     def run(self) -> None:
         try:
             self._validate_excel_file()
-            patient = _get_patient_name()
-            nrrd_path = self._get_nrrd_path(patient)
 
-            img = self._load_image(nrrd_path, patient)
+            if sys.argv[1].endswith(".nrrd"):
+                self.patient = sys.argv[2]
+                self.nrrd_path = self._get_nrrd_path_from_terminal(sys.argv[1])
+            else:
+                self.patient = self._get_patient_name()
+                self.nrrd_path = self._get_nrrd_path(self.patient)
+
+            img = self._load_image(self.nrrd_path, self.patient)
             analysis = _perform_analysis(img)
+
+            if len(sys.argv) > 1:
+                if sys.argv[2].lower() == "--kilman-filtering":
+                    analysis.apply_kalman_filter()     # applica Kalman
 
             frequency = self._validate_frequency(analysis.get_frequency())
             subdivision = self._calculate_subdivision(len(img.get_image()), frequency)
 
             heartrate_splitted = img.split_slice(subdivision)
 
-            self._plot_histogram(img, patient)
-            # validated_index = self._validate_peaks(analysis, patient, frequency)
+            self._plot_histogram(img, self.patient)
+            validated_index = self._validate_peaks(analysis, self.patient, frequency)
 
             self.plotter.plot_fft(
                 analysis.get_frequency_plot(),
                 analysis.get_P_normed(),
-                patient,
+                self.patient,
                 "FFT"
             )
 
             # if validated_index is not None:
-            self._plot_sinusoid(analysis, patient)
-            self._save_results(img, patient, frequency, heartrate_splitted)
+            self._plot_sinusoid(analysis, self.patient)
+            self._save_results(img, self.patient, frequency, heartrate_splitted)
             #else:
             #    self.logger.log("warning", "No valid plot was confirmed. Exiting.")
 
@@ -92,6 +91,21 @@ class MedicalImagePipeline:
         except Exception as e:
             self.logger.log("critical", f"Unexpected error in pipeline: {e}")
             sys.exit(1)
+
+    def _get_nrrd_path_from_terminal(self, patient: str) -> Path:
+        self.logger.log("info", "Inserted a .nrrd file")
+
+        return Path(patient)
+
+    def _get_patient_name(self) -> str:
+        if len(sys.argv) != 0:
+            return sys.argv[1]
+        else:
+            while True:
+                patient = input("Enter patient name (e.g., Paz_001_01): ").strip()
+                if patient:
+                    return patient
+                print("Patient name cannot be empty. Please try again.")
 
     def _validate_excel_file(self) -> None:
         if not self.excel_path.exists():
@@ -116,7 +130,7 @@ class MedicalImagePipeline:
     def _load_image(self, nrrd_path: Path, patient: str) -> GrayScaleImage:
         try:
             img = GrayScaleImage(str(nrrd_path))
-            img.get_gaussian_filter(img.get_image(), 2)
+            # img.get_gaussian_filter(img.get_image(), 2)
             self.logger.log("info", f"Loaded image for {patient}: {nrrd_path}")
             return img
         except Exception as e:

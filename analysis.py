@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.fft import fft, fftfreq
 from scipy.signal import find_peaks
 from log import Log
@@ -34,6 +33,37 @@ class Analysis:
         for i in range(1, self.img_np.shape[0]):
             distance = _calculate_spatial_distance(initial_image, self.img_np[i, :, :])
             self.distances.append(distance)
+
+    def apply_kalman_filter(self, Q=1e-5, R=0.01):
+        distances = np.array(self.distances)
+        if distances.size == 0:
+            return
+
+        n_iter = len(distances)
+
+        # Allocate arrays
+        xhat = np.zeros(n_iter)      # estimate
+        P = np.zeros(n_iter)         # estimate error
+        xhatminus = np.zeros(n_iter) # predicted state
+        Pminus = np.zeros(n_iter)    # predicted estimate error
+        K = np.zeros(n_iter)         # Kalman gain
+
+        # Initial estimates
+        xhat[0] = distances[0]
+        P[0] = 1.0
+
+        for k in range(1, n_iter):
+            # Prediction
+            xhatminus[k] = xhat[k-1]
+            Pminus[k] = P[k-1] + Q
+
+            # Update
+            K[k] = Pminus[k] / (Pminus[k] + R)
+            xhat[k] = xhatminus[k] + K[k] * (distances[k] - xhatminus[k])
+            P[k] = (1 - K[k]) * Pminus[k]
+
+        self.distances = xhat.tolist()
+
 
     def get_frequency(self, i: int = 0):
         norme = np.array(self.get_distances())

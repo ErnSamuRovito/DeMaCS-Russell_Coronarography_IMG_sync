@@ -4,7 +4,6 @@ from processer import Processer
 from scipy.ndimage import gaussian_filter
 from log import Log
 
-
 class GrayScaleImage:
     def __init__(self, file_path: str):
         self.logger = Log("history.log")
@@ -25,9 +24,6 @@ class GrayScaleImage:
             for key in self._sitk_image.GetMetaDataKeys()
         }
 
-    def get_gaussian_filter(self, image: np.ndarray, sigma: float) -> np.ndarray:
-        return gaussian_filter(image, sigma)
-
     def get_numpy_array(self):
         numpy_array = sitk.GetArrayFromImage(self._sitk_image)
         return np.clip(numpy_array, 0, 255).astype(np.uint8)
@@ -35,6 +31,9 @@ class GrayScaleImage:
     def get_pixels_presence(self):
         unique, counts = np.unique(self.numpy_array, return_counts=True)
         return counts
+
+    def get_gaussian_filter(self, image: np.ndarray, sigma: float) -> np.ndarray:
+        return gaussian_filter(image, sigma)
 
     def get_meta_data(self):
         return self.meta_data

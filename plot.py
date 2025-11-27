@@ -36,7 +36,7 @@ class Plot:
 
         plt.tight_layout()
         plt.savefig(output_path, dpi=300, bbox_inches='tight')
-        # plt.show()
+        plt.show()
         plt.close()
 
     def plot_histogram(self, values: np.ndarray, patient_id: str, title: str = 'plot_histogram'):

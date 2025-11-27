@@ -1,6 +1,6 @@
-$PYTHON_EXE = "C:\Users\samue\Desktop\Tesi\.venv\Scripts\python.exe"
-$SCRIPT_PATH = "C:\Users\samue\Desktop\Tesi\main.py"
-$FOLDER_PATH = "Root_dir"
+$PYTHON_EXE = "?"
+$SCRIPT_PATH = "?"
+$FOLDER_PATH = "?"
 
 if (-not (Test-Path $FOLDER_PATH))
 {

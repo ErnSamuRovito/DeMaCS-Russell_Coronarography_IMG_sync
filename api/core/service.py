@@ -1,14 +1,13 @@
 from log import Log
 import numpy as np
+from api.models.result import Result
 from analysis import Analysis
-from patients import Result
 from grayScaleImage import GrayScaleImage
 from extractor import Extractor
 from pathlib import Path
 from paths import validate_patient_id, resolve_patient_nrrd
 
-EXCEL_FILE = "../Tesi.xlsx"
-
+EXCEL_FILE = "../../Tesi.xlsx"
 
 class Service:
     def __init__(self, base_folder=None):

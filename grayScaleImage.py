@@ -4,6 +4,7 @@ from processer import Processer
 from scipy.ndimage import gaussian_filter
 from log import Log
 
+
 class GrayScaleImage:
     def __init__(self, file_path: str):
         self.logger = Log("history.log")
@@ -25,12 +26,15 @@ class GrayScaleImage:
         }
 
     def get_numpy_array(self):
-        numpy_array = sitk.GetArrayFromImage(self._sitk_image)
-        return np.clip(numpy_array, 0, 255).astype(np.uint8)
+        arr = sitk.GetArrayFromImage(self._sitk_image).astype(np.float32)
+        vmin, vmax = float(arr.min()), float(arr.max())
+        if vmax > vmin:
+            arr = (arr - vmin) / (vmax - vmin)
+        return arr
 
     def get_pixels_presence(self):
-        unique, counts = np.unique(self.numpy_array, return_counts=True)
-        return counts
+        quantized = (self.numpy_array * 255).astype(np.uint8)
+        return np.bincount(quantized.ravel(), minlength=256)
 
     def get_gaussian_filter(self, image: np.ndarray, sigma: float) -> np.ndarray:
         return gaussian_filter(image, sigma)
@@ -60,7 +64,7 @@ class GrayScaleImage:
         output_folder = processer.get_processed_folder(id_patient)
 
         for i, subarray in enumerate(subarrays):
-            sub_image = sitk.GetImageFromArray(subarray)
+            sub_image = sitk.GetImageFromArray(subarray.astype(np.float32))
 
             sub_image.SetSpacing(self._sitk_image.GetSpacing())
             sub_image.SetOrigin(self._sitk_image.GetOrigin())
@@ -68,7 +72,7 @@ class GrayScaleImage:
 
             output_path = output_folder / f"heartbeat_{id_patient}_{i + 1}.nrrd"
             sitk.WriteImage(sub_image, str(output_path))
-            print(f"[INFO] Saved subarray {i + 1}/{len(subarrays)} → {output_path}")
+            print(f"[INFO] Saved subarray {i + 1}/{len(subarrays)} --> {output_path}")
 
     def print_info(self):
         self.logger.log("info", f"Type : {self.numpy_array.dtype}")

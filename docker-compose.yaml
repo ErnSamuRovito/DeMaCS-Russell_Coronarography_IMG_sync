@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./Root_dir:/app/Root_dir:ro
+      - ./Tesi.xlsx:/app/Tesi.xlsx:ro
+      - ./Root_dir_processed:/app/Root_dir_processed
+      - ./logs:/app/logs
+    restart: unless-stopped

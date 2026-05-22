@@ -1,25 +1,17 @@
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import APIRouter, HTTPException
+from core.service import Service
+from models.result import Result
 
-from api.core.service import Service
+router = APIRouter(prefix="/patients", tags=["Patients"])
 
-app = FastAPI()
+service = Service(base_folder="/app")
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:4200"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+@router.get("/{patient_id}", response_model=Result)
+def get_patient(patient_id: str):
+    result = service.get_result(patient_id)
 
-service = Service()
-
-
-@app.get("/patients/{patient_id}")
-def read_item(patient_id: str):
-    result = service.get_result(patient=patient_id)
     if result.error:
-        status = 422 if "Invalid" in result.error or "empty" in result.error.lower() else 404
+        status = 422 if "invalid" in result.error.lower() else 404
         raise HTTPException(status_code=status, detail=result.error)
+
     return result

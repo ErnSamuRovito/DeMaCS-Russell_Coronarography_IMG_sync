@@ -1,13 +1,14 @@
 from log import Log
 import numpy as np
 from analysis import Analysis
-from result import Result
+from patients import Result
 from grayScaleImage import GrayScaleImage
 from extractor import Extractor
 from pathlib import Path
+from paths import validate_patient_id, resolve_patient_nrrd
 
-EXCEL_FILE = "Tesi.xlsx"
-ROOT_DIR = Path("Root_dir")
+EXCEL_FILE = "../Tesi.xlsx"
+
 
 class Service:
     def __init__(self, base_folder=None):
@@ -15,17 +16,30 @@ class Service:
         self.base_folder = Path(base_folder) if base_folder else Path(__file__).resolve().parent
 
     def get_result(self, patient: str) -> Result:
+        try:
+            patient = validate_patient_id(patient)
+        except ValueError as e:
+            self.logger.log("warning", str(e))
+            return Result(error=str(e))
+
         excel_path = self.base_folder / EXCEL_FILE
         nrrd_name = Extractor.get_nrrd_from_excel(patient, excel_path)
 
         if not nrrd_name:
-            self.logger.log("warning", f"No .nrrd file found for patient '{patient}' in {excel_path}")
-            return Result()
+            msg = f"No .nrrd file found for patient '{patient}'"
+            self.logger.log("warning", f"{msg} in {excel_path}")
+            return Result(error=msg)
 
-        nrrd_path = self.base_folder / ROOT_DIR / patient / nrrd_name
+        try:
+            nrrd_path = resolve_patient_nrrd(self.base_folder, patient, nrrd_name)
+        except ValueError as e:
+            self.logger.log("warning", str(e))
+            return Result(error=str(e))
+
         if not nrrd_path.exists():
-            self.logger.log("error", f"File not found: {nrrd_path}")
-            return Result()
+            msg = f"File not found: {nrrd_path}"
+            self.logger.log("error", msg)
+            return Result(error=msg)
 
         try:
             img = GrayScaleImage(str(nrrd_path))
@@ -39,16 +53,17 @@ class Service:
 
             result = Result(
                 meta_keys=list(img.get_meta_data().keys()),
-                image_size=(int(image_data.shape[0]), int(image_data.shape[1]), int(image_data.shape[2])),
-                Max=int(np.max(image_data)),
-                Min=int(np.min(image_data)),
+                image_size=tuple(int(x) for x in image_data.shape),
+                Max=float(np.max(image_data)),
+                Min=float(np.min(image_data)),
                 distances=analysis.get_distances(),
-                pixels_presence=img.get_pixels_presence().tolist()
+                pixels_presence=img.get_pixels_presence().tolist(),
             )
 
             self.logger.log("info", f"Analysis completed successfully for patient {patient}")
             return result
 
         except Exception as e:
-            self.logger.log("critical", f"Error processing patient '{patient}': {e}")
-            return Result()
+            msg = f"Error processing patient '{patient}': {e}"
+            self.logger.log("critical", msg)
+            return Result(error=msg)

@@ -7,7 +7,7 @@ from extractor import Extractor
 from pathlib import Path
 from paths import validate_patient_id, resolve_patient_nrrd
 
-EXCEL_FILE = "../../Tesi.xlsx"
+EXCEL_FILE = "../../Dataset.xlsx"
 
 class Service:
     def __init__(self, base_folder=None):

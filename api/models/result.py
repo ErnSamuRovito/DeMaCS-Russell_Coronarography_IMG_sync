@@ -1,7 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional, Tuple
 
-
 class Result(BaseModel):
     meta_keys: List[str] = Field(default_factory=list)
     image_size: Tuple[int, ...] = ()

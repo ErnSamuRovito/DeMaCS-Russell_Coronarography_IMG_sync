@@ -10,7 +10,7 @@ from extractor import Extractor
 from paths import validate_patient_id, resolve_patient_nrrd
 from typing import Optional
 
-EXCEL_FILE = "Tesi.xlsx"
+EXCEL_FILE = "Dataset.xlsx"
 MIN_VALID_FREQUENCY = 1
 MAX_PLOT_RETRIES = 10
 

@@ -7,7 +7,7 @@ services:
       - .env
     volumes:
       - ./Root_dir:/app/Root_dir:ro
-      - ./Tesi.xlsx:/app/Tesi.xlsx:ro
+      - ./Dataset.xlsx:/app/Dataset.xlsx:ro
       - ./Root_dir_processed:/app/Root_dir_processed
       - ./logs:/app/logs
     restart: unless-stopped

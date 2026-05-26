@@ -1,4 +1,4 @@
-![Icon Russell](resources\logo\Russell.png)
+![Icon Russell](resources/logo/Russell.png)
 
 # Russell
 

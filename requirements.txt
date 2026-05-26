@@ -1,0 +1,7 @@
+numpy~=2.3.4
+fastapi~=0.136.0
+matplotlib~=3.10.7
+pydantic~=2.13.3
+scipy~=1.16.3
+pandas~=2.3.3
+simpleitk~=2.5.2

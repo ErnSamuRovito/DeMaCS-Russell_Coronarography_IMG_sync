@@ -30,6 +30,6 @@ curl -i ^
 # Concepts implemented
 
 - [ ] Interface for validation by the radiologist/cardiologist
-- [ ] DDeep Subtraction Angiography
+- [ ] Deep Subtraction Angiography
 
 and soon others...

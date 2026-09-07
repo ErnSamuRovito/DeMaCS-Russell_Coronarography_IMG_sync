@@ -31,5 +31,6 @@ curl -i ^
 
 - [ ] Interface for validation by the radiologist/cardiologist
 - [ ] Deep Subtraction Angiography
+- [ ] API architecture
 
 and soon others...

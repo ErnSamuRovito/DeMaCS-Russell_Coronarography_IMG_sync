@@ -27,3 +27,9 @@ curl -i ^
   -H "Content-Type: application/json" ^
   -X GET "http://localhost:4200/patients/Paz_001_01"
 ```
+# Concepts implemented
+
+- [ ] Interface for validation by the radiologist/cardiologist
+- [ ] DDeep Subtraction Angiography
+
+and soon others...
